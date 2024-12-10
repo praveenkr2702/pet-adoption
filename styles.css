@@ -44,7 +44,7 @@ h1 {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    text-shadow: 40px 0px 100px #ef80fe;
+    text-shadow: 40px 0px 0px #ef80fe;
 }
 
 .hero-icons {
