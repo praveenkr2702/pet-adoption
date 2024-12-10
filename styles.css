@@ -13,12 +13,14 @@ body {
     background-color: var(--dark);
     color: var(--light);
     font-family: system-ui, -apple-system, sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 2rem;
+    box-sizing: border-box; /* Include padding and border in width calculation */
 }
 
 .hero {
@@ -30,34 +32,19 @@ body {
 h1 {
     line-height: 1.5;
     margin: 0;
-    /* letter-spacing: -2px; */
-
-  font-style: normal;
-
-
-
-
-  font-family: "Anton", sans-serif;
+    font-family: "Anton", sans-serif;
     font-weight: 1200;
-    font-style: normal;
     font-size: 5rem;
+    text-align: center;
+    white-space: normal; /* Allow line break on smaller screens */
 }
 
-.highlights
-{
+.highlights {
     background: linear-gradient(360deg, var(--pink), #f78de5);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    text-shadow: 40px 0px 100px #ef80fe ;
-    /* font-family: "Oi", serif; */
-    
-    
-}
-
-.sub{
-    font-size: 30px;
-    /* font-weight: 200; */
+    text-shadow: 40px 0px 100px #ef80fe;
 }
 
 .hero-icons {
@@ -72,17 +59,17 @@ h1 {
 }
 
 .icon img {
-    width: 150px; /* Adjust width as needed */
-    height: auto; /* Maintains aspect ratio */
-    display: block; /* Optional: Removes inline padding/margin */
-    margin: 0 auto; /* Optional: Centers the image */
+    width: 150px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 .bento-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
-    /* margin-top: 1rem; */
+    margin-top: 1rem;
 }
 
 .bento-item {
@@ -94,16 +81,11 @@ h1 {
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.bento-item img{
+.bento-item img {
     max-width: 100%;
     height: auto;
     border-radius: 0.5rem;
 }
-
-/* .bento-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
-} */
 
 .large {
     grid-column: span 1;
@@ -119,26 +101,18 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
-.wide h3{
-    font-style: normal;
-
+.wide h3 {
     font-family: "Anton", sans-serif;
     font-weight: 1200;
-
-  font-size: 5rem;
-  line-height: 1;
-  margin: 0;
-
-  /* background: linear-gradient(360deg, var(--pink), #f78de5); */
+    font-size: 5rem;
+    line-height: 1;
+    margin: 0;
     -webkit-background-clip: text;
     background-clip: text;
     color: #ffffff;
-    box-shadow: 100px 10px 300px #ef80fe ;
-    
-
+    box-shadow: 100px 10px 300px #ef80fe;
 }
 
 .highlight {
@@ -155,19 +129,11 @@ h2 {
 }
 
 h3 {
-    /* font-size: 2rem;
-    margin: 0 0 1rem 0;
-    font-weight: bolder; */
-
     font-family: "Anton", sans-serif;
     font-weight: 200;
     margin: 0 0 1rem 0;
     font-style: normal;
     font-size: 2rem;
-
-
-    
-    /* color: var(--pink); */
 }
 
 p {
@@ -199,16 +165,47 @@ p {
 
 @media (max-width: 768px) {
     h1 {
-        font-size: 3rem;
+        font-size: 2.5rem; /* Adjust for mobile screens */
+        text-align: center; /* Keep the heading centered */
     }
-    
+
+    .container {
+        width: 100%; /* Full width for smaller screens */
+        padding: 1rem; /* Adjust padding */
+    }
+
     .bento-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Single column on small screens */
     }
-    
-    .large, .wide {
-        grid-column: auto;
-        grid-row: auto;
+
+    .bento-item {
+        padding: 1rem; /* Ensure padding on small screens */
+    }
+
+    .hero {
+        padding: 3rem 1rem; /* Adjust padding for smaller screens */
+    }
+
+    .large {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .wide {
+        grid-column: span 1;
+        background-color: #ef80fe;
+    }
+
+    .wide h3 {
+        font-size: 3rem; /* Reduce font size on small screens */
+    }
+
+    .highlight {
+        padding: 1rem;
+    }
+
+    /* Ensure no horizontal overflow on mobile */
+    body {
+        overflow-x: hidden;
     }
 }
-
