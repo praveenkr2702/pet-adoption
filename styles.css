@@ -167,7 +167,10 @@ p {
     h1 {
         font-size: 2.5rem; /* Adjust for mobile screens */
         text-align: center; /* Keep the heading centered */
-         text-shadow: 10px 0px 30px rgba(239, 128, 254, 0.8);
+    }
+
+    .highlights{
+             text-shadow: 10px 0px 40px rgba(239, 128, 254, 0.8);
     }
 
     .container {
