@@ -125,10 +125,9 @@ h1 {
     margin-top: 2rem;
 }
 
-.wide h3 {
+/* .wide h3 {
     font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
-  /* font-weight: 900; */
   font-style: normal;
     font-weight: 1200;
     font-size: 3rem;
@@ -136,19 +135,26 @@ h1 {
     margin: 0;
     -webkit-background-clip: text;
     background-clip: text;
-    /* color: #f7d2fc; */
 
     color: linear-gradient(10deg, #f7d2fc, #f78de5);
 
-
-
-    /* text-align: center; Centers the text inside the box */
-    /* font-size: 1.2rem; Adjust text size */
-    /* margin: 5px 0; Adjust vertical spacing */
-    word-wrap: break-word; /* Ensures words don’t overflow */
+    word-wrap: break-word;
 
 
 
+} */
+
+.wide h3 {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 1200;
+    font-size: 3rem; /* Reduce size for better fit */
+    line-height: 1.2; /* Adjust line height for smaller screens */
+    margin: 0;
+    /* word-wrap: break-word; Ensure long words break correctly */
+    /* word-break: break-word; Prevent overflow by breaking words */
+    /* text-align: center; Center-align text inside the box */
+    overflow-wrap: break-word; /* Additional safeguard for wrapping */
 }
 
 .wide img
@@ -258,11 +264,21 @@ p {
     .wide {
         grid-column: span 1;
         /* background-color: #ef80fe; */
+        /* padding: 0 4rem;  */
+       
     }
 
     .wide h3 {
-        font-size: 2rem; /* Reduce font size on small screens */
+        font-size: 1.5rem; /* Further reduce font size for small screens */
+        /* line-height: 1.4; Increase line spacing slightly */
+        /* padding: 0 -4rem;  */
     }
+
+    .wide img
+{
+    width: 100px;
+    height: auto;
+}
 
     .highlight {
         padding: 1rem;
