@@ -16,10 +16,58 @@ body {
     overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--light);
+  font-size: 24px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.hamburger .material-icons {
+    font-size: 24px; /* Reduced size */
+}
+
+.navbar {
+  position: relative; /* Changed from fixed to relative for desktop */
+  top: 20px; /* This will now create space above the navbar */
+  left: 0;
+  right: 0;
+  width: calc(100% - 40px);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #000000;
+  z-index: 1001;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+.navbar a{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
+
+.navbar-sub{
+    display: flex;
+    gap: 2rem;
+}
+
+    
+.nav-image{
+    width: 150px;
+    height: auto;
+}
 .container {
     max-width: 100%;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 2rem; /* Reduced from 4rem to 2rem */
     box-sizing: border-box; /* Include padding and border in width calculation */
 }
 
@@ -32,35 +80,13 @@ body {
 h1 {
     line-height: 1;
     margin: 0;
-    /* font-family: "Anton", sans-serif;
-    font-weight: 1200;
-    font-size: 5rem; */
-
-    /* font-family: "starborn", sans-serif; */
-
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
-    /* font-weight: 900; */
-    font-style: normal;
-
-
     font-weight: 1200;
     font-size: 5rem;
-
-
-
     text-align: center;
     white-space: normal; /* Allow line break on smaller screens */
 }
-/* 
-.highlights {
-    background: linear-gradient(360deg, var(--pink), #f78de5);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-
-    font-family: "starborn", sans-serif;
-} */
 
 .hero-icons {
     display: flex;
@@ -112,49 +138,20 @@ h1 {
 
 .wide {
     grid-column: span 2;
-    /* padding: 1rem; */
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #e67ff4;
-    /* box-shadow: 50px 0px 100px #ef80fe; */
-
 }
-
-.subtext{
-    margin-top: 2rem;
-}
-
-/* .wide h3 {
-    font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-    font-weight: 1200;
-    font-size: 3rem;
-    line-height: 1;
-    margin: 0;
-    -webkit-background-clip: text;
-    background-clip: text;
-
-    color: linear-gradient(10deg, #f7d2fc, #f78de5);
-
-    word-wrap: break-word;
-
-
-
-} */
 
 .wide h3 {
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-weight: 1200;
-    font-size: 3rem; /* Reduce size for better fit */
-    line-height: 1.2; /* Adjust line height for smaller screens */
+    font-size: 3rem;
+    line-height: 1.2;
     margin: 0;
-    /* word-wrap: break-word; Ensure long words break correctly */
-    /* word-break: break-word; Prevent overflow by breaking words */
-    /* text-align: center; Center-align text inside the box */
-    overflow-wrap: break-word; /* Additional safeguard for wrapping */
+    overflow-wrap: break-word;
 }
 
 .wide img
@@ -177,27 +174,18 @@ h2 {
 }
 
 h3 {
-    /* font-family: "starborn", sans-serif;
-    font-weight: 200; */
-
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-weight: 900;
     font-style: normal;
     margin: 0 0 1rem 0;
-    font-style: normal;
     font-size: 2rem;
 }
 
-
-
 p {
-    color: var(--pink);
-
     color: linear-gradient(360deg, var(--pink), #f78de5);
     -webkit-background-clip: text;
     background-clip: text;
-    /* color: transparent; */
     opacity: 0.8;
 }
 
@@ -210,6 +198,10 @@ p {
 .partner-list li {
     padding: 0.5rem 0;
     opacity: 0.8;
+}
+
+.subtext{
+    margin-top: 2rem;
 }
 
 @font-face {
@@ -233,27 +225,55 @@ p {
     50% { transform: translateY(-10px); }
 }
 
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: var(--dark);
+  transition: right 0.3s ease-in-out;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+}
+
+.side-menu a {
+  color: var(--light);
+  text-decoration: none;
+  padding: 15px 20px;
+  font-size: 18px;
+}
+
+.side-menu.open {
+  right: 0;
+}
+
 @media (max-width: 768px) {
     h1 {
-        font-size: 2.5rem; /* Adjust for mobile screens */
-        text-align: center; /* Keep the heading centered */
+        font-size: 2.5rem;
+        text-align: center;
     }
 
     .container {
-        width: 100%; /* Full width for smaller screens */
-        padding: 1rem; /* Adjust padding */
+        width: 100%;
+        padding-top: 4rem; /* Add extra padding on top for mobile to account for fixed navbar */
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-bottom: 1rem;
     }
 
     .bento-grid {
-        grid-template-columns: 1fr; /* Single column on small screens */
+        grid-template-columns: 1fr;
     }
 
     .bento-item {
-        padding: 1rem; /* Ensure padding on small screens */
+        padding: 1rem;
     }
 
     .hero {
-        padding: 3rem 1rem; /* Adjust padding for smaller screens */
+        padding: 3rem 1rem;
     }
 
     .large {
@@ -263,29 +283,41 @@ p {
 
     .wide {
         grid-column: span 1;
-        /* background-color: #ef80fe; */
-        /* padding: 0 4rem;  */
-       
     }
 
     .wide h3 {
-        font-size: 1.5rem; /* Further reduce font size for small screens */
-        /* line-height: 1.4; Increase line spacing slightly */
-        /* padding: 0 -4rem;  */
+        font-size: 1.5rem;
     }
 
-    .wide img
-{
-    width: 100px;
-    height: auto;
-}
+    .wide img {
+        width: 100px;
+        height: auto;
+    }
 
     .highlight {
         padding: 1rem;
     }
 
-    /* Ensure no horizontal overflow on mobile */
     body {
         overflow-x: hidden;
     }
+
+    .hamburger {
+        display: block;
+    }
+    .navbar {
+        position: fixed; /* Keep it fixed on mobile */
+        top: 10px;
+        width: calc(100% - 20px);
+        padding: 5px 15px;
+    }
+
+    .nav-image {
+        width: 100px; /* Further reduced for mobile */
+    }
+
+    .navbar-sub {
+        display: none;
+    }
 }
+

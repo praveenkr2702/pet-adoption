@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     //     });
     // });
 
+    
+
     // Add parallax effect to hero icons
     document.addEventListener('mousemove', (e) => {
         const icons = document.querySelectorAll('.icon');
@@ -26,4 +28,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const sideMenu = document.querySelector('.side-menu');
+  
+    hamburger.addEventListener('click', function() {
+      sideMenu.classList.toggle('open');
+    });
+  
+    // Close the menu when clicking outside
+    document.addEventListener('click', function(event) {
+      if (!sideMenu.contains(event.target) && !hamburger.contains(event.target)) {
+        sideMenu.classList.remove('open');
+      }
+    });
+  });
 
