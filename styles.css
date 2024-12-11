@@ -30,22 +30,30 @@ body {
 }
 
 h1 {
-    line-height: 1.5;
+    line-height: 1;
     margin: 0;
-    font-family: "Anton", sans-serif;
+    /* font-family: "Anton", sans-serif;
+    font-weight: 1200;
+    font-size: 5rem; */
+
+    font-family: "starborn", sans-serif;
     font-weight: 1200;
     font-size: 5rem;
+
+
+
     text-align: center;
     white-space: normal; /* Allow line break on smaller screens */
 }
-
+/* 
 .highlights {
     background: linear-gradient(360deg, var(--pink), #f78de5);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    text-shadow: 40px 0px 0px #ef80fe;
-}
+
+    font-family: "starborn", sans-serif;
+} */
 
 .hero-icons {
     display: flex;
@@ -97,22 +105,27 @@ h1 {
 
 .wide {
     grid-column: span 2;
-    background-color: #ef80fe;
+    /* padding: 1rem; */
     display: flex;
     justify-content: center;
     align-items: center;
+    /* background-color: var(--pink); */
+    /* box-shadow: 40px 0px 100px #ef80fe; */
+
 }
 
 .wide h3 {
-    font-family: "Anton", sans-serif;
+    font-family: "starborn", sans-serif;
     font-weight: 1200;
-    font-size: 5rem;
+    font-size: 4rem;
     line-height: 1;
     margin: 0;
     -webkit-background-clip: text;
     background-clip: text;
-    color: #ffffff;
-    box-shadow: 100px 10px 300px #ef80fe;
+    color: linear-gradient(360deg, var(--pink), #f78de5);
+
+
+
 }
 
 .highlight {
@@ -129,7 +142,7 @@ h2 {
 }
 
 h3 {
-    font-family: "Anton", sans-serif;
+    font-family: "starborn", sans-serif;
     font-weight: 200;
     margin: 0 0 1rem 0;
     font-style: normal;
@@ -137,7 +150,12 @@ h3 {
 }
 
 p {
-    color: var(--light);
+    color: var(--pink);
+
+    color: linear-gradient(360deg, var(--pink), #f78de5);
+    -webkit-background-clip: text;
+    background-clip: text;
+    /* color: transparent; */
     opacity: 0.8;
 }
 
@@ -150,6 +168,16 @@ p {
 .partner-list li {
     padding: 0.5rem 0;
     opacity: 0.8;
+}
+
+@font-face {
+    font-family: "custom";
+    src: url("/fonts/Bright\ Almond\ Personal\ Use\ Only.ttf");
+}
+
+@font-face {
+    font-family: "starborn";
+    src: url("/fonts/Starborn.otf");
 }
 
 .bento-image {
@@ -167,10 +195,6 @@ p {
     h1 {
         font-size: 2.5rem; /* Adjust for mobile screens */
         text-align: center; /* Keep the heading centered */
-    }
-
-    .highlights{
-             text-shadow: 10px 0px 100px rgba(239, 128, 254, 0.8);
     }
 
     .container {
@@ -197,7 +221,7 @@ p {
 
     .wide {
         grid-column: span 1;
-        background-color: #ef80fe;
+        /* background-color: #ef80fe; */
     }
 
     .wide h3 {
